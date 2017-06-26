@@ -20,10 +20,10 @@ namespace Log4MongoDB.LogInner
 
         public string StackTrace { get; set; }
 
-        public override string ToString()
-        {
-            return $"[{Time}]-{Level}:{Message}\r\n{StackTrace}";
-        }
+        //public override string ToString()
+        //{
+        //    return $"[{Time}]-{Level}:{Message}\r\n{StackTrace}";
+        //}
     }
 
    

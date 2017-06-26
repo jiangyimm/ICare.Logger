@@ -1,0 +1,24 @@
+﻿<Window x:Class="ICare.LoggerClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ICare.LoggerClient"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="768" Width="1024">
+    <StackPanel Orientation="Horizontal">
+        <StackPanel Width="600">
+            <ComboBox Margin="5" Name="ComboBox" />
+
+            <Button Margin="5" Name="Button" Content="DoQuery" Click="Button_OnClick"></Button>
+            <DataGrid Margin="5" Name="DataGrid" />
+        </StackPanel>
+        <StackPanel Width="200">
+            <ComboBox Margin="5" Name="ComboBox1"></ComboBox>
+            <ComboBox Margin="5" Name="ComboBox2"></ComboBox>
+            <TextBox Margin="5" Name="TextBox"></TextBox>
+            <Button Margin="5" Name="Button1" Content="DoInsert" Click="Button1_OnClick"></Button>
+        </StackPanel>
+    </StackPanel>
+   
+</Window>

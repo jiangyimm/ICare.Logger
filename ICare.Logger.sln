@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Log4MongoDB", "Log4MongoDB\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICare.LoggerTest", "ICare.LoggerTest\ICare.LoggerTest.csproj", "{558082A1-13FD-4587-8AE6-F4C14B8000F9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICare.LoggerClient", "ICare.LoggerClient\ICare.LoggerClient.csproj", "{0BEB02ED-A1C6-4715-A713-DCF834D6773A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{558082A1-13FD-4587-8AE6-F4C14B8000F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{558082A1-13FD-4587-8AE6-F4C14B8000F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{558082A1-13FD-4587-8AE6-F4C14B8000F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BEB02ED-A1C6-4715-A713-DCF834D6773A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BEB02ED-A1C6-4715-A713-DCF834D6773A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BEB02ED-A1C6-4715-A713-DCF834D6773A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BEB02ED-A1C6-4715-A713-DCF834D6773A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
