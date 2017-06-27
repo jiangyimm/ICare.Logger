@@ -11,7 +11,7 @@
             <ComboBox Margin="5" Name="ComboBox" />
 
             <Button Margin="5" Name="Button" Content="DoQuery" Click="Button_OnClick"></Button>
-            <DataGrid Margin="5" Name="DataGrid" />
+            <DataGrid Margin="5" Name="DataGrid" AutoGenerateColumns="True"  />
         </StackPanel>
         <StackPanel Width="200">
             <ComboBox Margin="5" Name="ComboBox1"></ComboBox>

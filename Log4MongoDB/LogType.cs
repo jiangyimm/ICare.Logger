@@ -5,6 +5,8 @@ namespace Log4MongoDB
         LogUpdate,
         LogMain,
         LogNet, 
-        LogDevice
+        LogDevice,
+        LogPointTouch
+            
     }
 }

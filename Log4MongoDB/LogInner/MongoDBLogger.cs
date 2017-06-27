@@ -2,6 +2,7 @@
 using MongoDB.Driver.Linq;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Log4MongoDB.LogInner
 {
@@ -20,7 +21,7 @@ namespace Log4MongoDB.LogInner
             if (connected)
                 return;
             mongoClient = new MongoClient("mongodb://localhost:27017");
-            db = mongoClient.GetDatabase("ICarelog2");
+            db = mongoClient.GetDatabase("ICarelog");
             CreateTables();
             connected = true;
         }
@@ -31,6 +32,7 @@ namespace Log4MongoDB.LogInner
             {
                 try
                 {
+                    
                     db.CreateCollection(name);
                 }
                 catch (Exception e)
@@ -40,24 +42,33 @@ namespace Log4MongoDB.LogInner
             }
         }
 
-        public static void Insert(LogType logType, LogLevel logLevel, object logMessage)
+        public static void Insert<T>(LogType logType, LogLevel logLevel, T logMessage)
         {
             Init();
+            if (logType == LogType.LogPointTouch)
+            {
+                var logtype = logType.ToString();
+                var collection = db.GetCollection<T>(logtype);
+                collection.InsertOne(logMessage);
+                return;
+            }
             var info = new LogInfo
             {
                 Level = (int)logLevel,
-                Message = logMessage.ToString()
+                Message = logMessage.ToString(),
+                DateTime = DateTime.Now,
+                StackTrace = (int)logLevel>(int)LogLevel.Info?new StackTrace(16).ToString() :null
             };
             var name = logType.ToString();
             var col = db.GetCollection<LogInfo>(name);
             col.InsertOne(info);
         }
 
-        public static List<LogInfo> QueryList(LogType logType)
+        public static List<T> QueryList<T>(LogType logType)
         {
             Init();
             var name = logType.ToString();
-            var col = db.GetCollection<LogInfo>(name);
+            var col = db.GetCollection<T>(name);
             return col.AsQueryable().ToList();
         }
     }

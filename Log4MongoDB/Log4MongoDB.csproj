@@ -56,7 +56,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Logger.cs" />
+    <Compile Include="LogInner\InfoBase.cs" />
     <Compile Include="LogInner\LogInfo.cs" />
+    <Compile Include="LogInner\PointTouchInfo.cs" />
     <Compile Include="LogLevel.cs" />
     <Compile Include="LogType.cs" />
     <Compile Include="LogInner\MongoDBLogger.cs" />
